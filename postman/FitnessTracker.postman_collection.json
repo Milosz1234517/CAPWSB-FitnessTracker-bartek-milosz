@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "0cfa82c6-13e6-4e39-aaf8-4277b05008c1",
+		"name": "FitnessTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24165382"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSimpleUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/users/simple"
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersByEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/users/email?email=tes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"users",
+						"email"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "tes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersOlderThan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/users/older/2000-09-18"
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"name\",\r\n    \"lastName\": \"last\",\r\n    \"birthdate\": \"2000-09-18\",\r\n    \"email\": \"test@test.pl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"name1\",\r\n    \"lastName\": \"last1\",\r\n    \"birthdate\": \"2000-09-18\",\r\n    \"email\": \"test@test1.pl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"name1\",\r\n    \"lastName\": \"last1\",\r\n    \"birthdate\": \"2000-09-18\",\r\n    \"email\": \"test@test1.pl\"\r\n}"
+				},
+				"url": "http://localhost:8080/v1/users/1"
+			},
+			"response": []
+		}
+	]
+}
