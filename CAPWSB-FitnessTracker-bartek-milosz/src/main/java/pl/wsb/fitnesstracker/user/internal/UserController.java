@@ -3,7 +3,7 @@ package pl.wsb.fitnesstracker.user.internal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.wsb.fitnesstracker.user.api.User;
+import pl.wsb.fitnesstracker.user.api.*;
 
 import java.time.LocalDate;
 import java.util.List;
