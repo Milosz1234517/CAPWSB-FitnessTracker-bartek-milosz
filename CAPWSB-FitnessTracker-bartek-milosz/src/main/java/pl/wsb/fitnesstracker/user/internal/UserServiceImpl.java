@@ -1,8 +1,11 @@
-package pl.wsb.fitnesstracker.user.api;
+package pl.wsb.fitnesstracker.user.internal;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import pl.wsb.fitnesstracker.user.api.User;
+import pl.wsb.fitnesstracker.user.api.UserProvider;
+import pl.wsb.fitnesstracker.user.api.UserService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserServiceImpl implements UserService, UserProvider {
+class UserServiceImpl implements UserService, UserProvider {
 
     private final UserRepository userRepository;
 

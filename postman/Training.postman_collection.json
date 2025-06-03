@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "0f69ecaa-c7c4-481c-a6a7-ebff99899862",
+		"name": "Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24165382"
+	},
+	"item": [
+		{
+			"name": "getAllTrainings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/trainings"
+			},
+			"response": []
+		},
+		{
+			"name": "getTrainingsForUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/trainings/1"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFinished",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/trainings/finished/2025-06-04"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllActivity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings/activityType?activityType=RUNNING",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings",
+						"activityType"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "RUNNING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTraining",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"startTime\": \"2025-05-02\",\r\n    \"endTime\": \"2025-05-03\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 0.0,\r\n    \"averageSpeed\": 0.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/trainings"
+			},
+			"response": []
+		},
+		{
+			"name": "updateTraining",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"1\",\r\n    \"startTime\": \"2025-05-02T11:00:00\",\r\n    \"endTime\": \"2025-05-03T11:00:00\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 0.1,\r\n    \"averageSpeed\": 0.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/trainings/1"
+			},
+			"response": []
+		}
+	]
+}

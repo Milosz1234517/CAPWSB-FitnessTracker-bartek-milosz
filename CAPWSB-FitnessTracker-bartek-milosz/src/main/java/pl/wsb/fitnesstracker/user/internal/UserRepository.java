@@ -1,4 +1,4 @@
-package pl.wsb.fitnesstracker.user.api;
+package pl.wsb.fitnesstracker.user.internal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.wsb.fitnesstracker.user.api.User;

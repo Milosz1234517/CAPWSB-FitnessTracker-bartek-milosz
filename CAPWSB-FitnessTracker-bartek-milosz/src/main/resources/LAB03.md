@@ -36,7 +36,7 @@ Stworzone API powinno pozwalać na:
 - [ ] (OPCJONALNIE) rozwiązanie powinno być pokryte testami jednostkowymi (>80%)
 - [X] rozwiązanie powinno być odpowiednio zhermetyzowane (nie udostępniać funkcjonalności pozostałym pakietom programu)
 - [X] kod powinien być odpowiednio udokumentowany za pomocą JavaDoc
-- [ ] do kodu powinna zostać dołączona wyeksportowana kolekcja zapytań z programu Postman, pozwalająca przetestować
+- [X] do kodu powinna zostać dołączona wyeksportowana kolekcja zapytań z programu Postman, pozwalająca przetestować
   stworzone API
 - [X] rozwiązanie powinno wykorzystywać zwykłe klasy Javowe do definicji obiektów transferu danych (DTO)
 
@@ -49,9 +49,9 @@ miesiącu.
 
 ### Wymagania funkcjonalne
 
-- [ ] w oparciu o ustalony zdefiniowany czas (co miesiąc) generowany jest raport z treningami dla każdego użytkownika z
+- [X] w oparciu o ustalony zdefiniowany czas (co miesiąc) generowany jest raport z treningami dla każdego użytkownika z
   danego miesiąca
-- [ ] raport wysyłany jest za pomocą e-mail z podsumowaniem do każdego użytkownika, ile treningów ma zarejestrowanych
+- [X] raport wysyłany jest za pomocą e-mail z podsumowaniem do każdego użytkownika, ile treningów ma zarejestrowanych
   łącznie
 
 ## ZADANIE 3 (opcjonalne). Sieciowe API do operacji typu CRUD na Statistics (bez użycia rekordów)

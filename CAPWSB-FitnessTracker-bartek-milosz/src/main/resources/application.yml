@@ -7,3 +7,14 @@ spring:
   h2:
     console:
       enabled: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: trackerfitness970@gmail.com
+    password: iksn yuve kmnp ojsd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

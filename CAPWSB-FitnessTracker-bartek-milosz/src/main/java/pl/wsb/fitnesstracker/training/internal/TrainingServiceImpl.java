@@ -1,8 +1,11 @@
-package pl.wsb.fitnesstracker.training.api;
+package pl.wsb.fitnesstracker.training.internal;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import pl.wsb.fitnesstracker.training.api.Training;
+import pl.wsb.fitnesstracker.training.api.TrainingProvider;
+import pl.wsb.fitnesstracker.training.api.TrainingService;
 import pl.wsb.fitnesstracker.training.internal.ActivityType;
 
 import java.util.Date;
@@ -40,6 +43,11 @@ public class TrainingServiceImpl implements TrainingProvider, TrainingService {
     @Override
     public List<Training> getAllActivity(ActivityType activity) {
         return trainingRepository.findAllActivity(activity);
+    }
+
+    @Override
+    public List<Training> getAllTrainingsForUserInRange(Long userId, Date firstDay, Date lastDay) {
+        return trainingRepository.findAllForUserInRange(userId, firstDay, lastDay);
     }
 
     @Override

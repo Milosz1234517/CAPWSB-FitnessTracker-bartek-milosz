@@ -57,4 +57,15 @@ public interface TrainingProvider {
      * @return a list of {@link Training} entities with the specified activity type
      */
     List<Training> getAllActivity(ActivityType activity);
+
+    /**
+     * Retrieves all training sessions assigned to the given user within the specified date range.
+     *
+     * @param userId    the ID of the user whose trainings are to be retrieved
+     * @param firstDay  the start date of the range (inclusive)
+     * @param lastDay   the end date of the range (inclusive)
+     * @return a list of {@code Training} objects for the specified user within the given date range;
+     *         the list may be empty but will never be {@code null}
+     */
+    List<Training> getAllTrainingsForUserInRange(Long userId, Date firstDay, Date lastDay);
 }

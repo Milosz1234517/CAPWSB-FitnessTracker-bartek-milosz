@@ -13,13 +13,15 @@ import java.util.List;
 @RequiredArgsConstructor
 class UserController {
 
-    private final UserServiceImpl userService;
+    private final UserProvider userProvider;
+
+    private final UserService userService;
 
     private final UserMapper userMapper;
 
     @GetMapping
     public List<UserDto> getAllUsers() {
-        return userService.findAllUsers()
+        return userProvider.findAllUsers()
                 .stream()
                 .map(userMapper::toDto)
                 .toList();
@@ -27,7 +29,7 @@ class UserController {
 
     @GetMapping("/simple")
     public List<SimpleUserDto> getAllSimpleUsers() {
-        return userService.findAllUsers()
+        return userProvider.findAllUsers()
                 .stream()
                 .map(userMapper::toSimpleDto)
                 .toList();
@@ -35,7 +37,7 @@ class UserController {
 
     @GetMapping("/email")
     public List<UserDetailsDto> getUsersByEmail(String email) {
-        return userService.getUsersByEmail(email)
+        return userProvider.getUsersByEmail(email)
                 .stream()
                 .map(userMapper::toDetailsDto)
                 .toList();
@@ -43,7 +45,7 @@ class UserController {
 
     @GetMapping("/older/{time}")
     public List<UserDetailsDto> getUsersOlderThan(@PathVariable LocalDate time) {
-        return userService.getUsersOlderThan(time)
+        return userProvider.getUsersOlderThan(time)
                 .stream()
                 .map(userMapper::toDetailsDto)
                 .toList();
@@ -51,7 +53,7 @@ class UserController {
 
     @GetMapping(value = "/{id}")
     public UserDetailsDto getUserById(@PathVariable Long id) {
-        User user = userService.getUser(id)
+        User user = userProvider.getUser(id)
                 .orElseThrow(() -> new IllegalArgumentException("User not found!"));
         return userMapper.toDetailsDto(user);
     }

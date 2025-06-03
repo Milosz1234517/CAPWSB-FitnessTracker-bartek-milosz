@@ -4,10 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.wsb.fitnesstracker.training.api.*;
-import pl.wsb.fitnesstracker.training.internal.ActivityType;
-import pl.wsb.fitnesstracker.training.internal.TrainingMapper;
 import pl.wsb.fitnesstracker.user.api.UserNotFoundException;
-import pl.wsb.fitnesstracker.user.api.UserServiceImpl;
+import pl.wsb.fitnesstracker.user.api.UserProvider;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,7 +19,7 @@ class TrainingController {
 
     private final TrainingServiceImpl trainingService;
 
-    private final UserServiceImpl userService;
+    private final UserProvider userService;
 
     private final TrainingMapper trainingMapper;
 

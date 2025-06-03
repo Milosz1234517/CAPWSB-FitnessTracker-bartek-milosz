@@ -1,4 +1,4 @@
-package pl.wsb.fitnesstracker.training.api;
+package pl.wsb.fitnesstracker.training.internal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.wsb.fitnesstracker.training.api.Training;
@@ -7,6 +7,7 @@ import pl.wsb.fitnesstracker.training.internal.ActivityType;
 import java.util.Date;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Repository interface for managing {@link Training} entities.
@@ -50,6 +51,13 @@ interface TrainingRepository extends JpaRepository<Training, Long> {
     default List<Training> findAllActivity(ActivityType activity) {
         return findAll().stream()
                 .filter(training -> training.getActivityType().equals(activity))
+                .toList();
+    }
+
+    default List<Training> findAllForUserInRange(Long userId, Date firstDay, Date lastDay) {
+        return findAll().stream()
+                .filter(training -> !training.getEndTime().before(firstDay)
+                        && !training.getEndTime().after(lastDay) && training.getUser().getId().equals(userId))
                 .toList();
     }
 }

@@ -14,7 +14,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class TrainingCreateDto {
 
-    Long id;
     Long userId;
     Date startTime;
     Date endTime;
